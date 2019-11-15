@@ -6,14 +6,14 @@ import authConfig from '../../config/auth';
 
 class SessionController {
   async store(req, res) {
+    const { body } = req;
+
     const schema = Yup.object().shape({
       email: Yup.string()
         .email()
         .required(),
       password: Yup.string().required()
     });
-
-    const { body } = req;
 
     const isValid = await schema.isValid(body);
     if (!isValid) {

@@ -13,6 +13,7 @@ module.exports = {
       },
       email: {
         type: Sequelize.STRING,
+        unique: true,
         allowNull: false
       },
       age: {
@@ -25,6 +26,14 @@ module.exports = {
       },
       height: {
         type: Sequelize.DOUBLE,
+        allowNull: false
+      },
+      created_at: {
+        type: Sequelize.DATE,
+        allowNull: false
+      },
+      updated_at: {
+        type: Sequelize.DATE,
         allowNull: false
       }
     }),
